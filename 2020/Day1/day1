@@ -1,0 +1,33 @@
+# import numpy as np
+
+def findVal(n):
+    for a in n:
+        for b in n:
+            sum = a + b
+            if sum == 2020:
+                return a, b
+
+def findVal2(n):
+    for a in n:
+        for b in n:
+            for c in n:
+                sum = a + b + c
+                if sum == 2020:
+                    return a, b, c
+
+
+text = open("input1", "r")
+lines = text.readlines()
+print(len(lines))
+num = [int(x) for x in lines]
+print(num)
+one, two = findVal(num)
+#Part 1
+print(one, two, one*two)
+
+one, two, three = findVal2(num)
+#Part 2
+print(one, two, three, one*two*three)
+
+
+
